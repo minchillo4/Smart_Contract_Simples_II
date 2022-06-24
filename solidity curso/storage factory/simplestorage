@@ -1,0 +1,26 @@
+//SDPX-License-Identifier: MIT
+
+pragma solidity ^0.8.8;
+
+
+    
+
+
+    contract SimpleStorage {
+        struct People {
+            string name;
+            uint256 age;
+        }
+
+
+        People[] public people;
+        mapping(string => uint256) public nameToFavoriteNumber;
+
+        function store(string memory _name, uint256 _age) public virtual {
+            people.push(People(_name,_age));
+            nameToFavoriteNumber[_name] = _age;
+        }
+
+    }
+
+    
